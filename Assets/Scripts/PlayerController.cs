@@ -54,7 +54,10 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     private Vector2 vgravity;
 
+    //Woww
 
+
+    // jrhgskgthj
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
