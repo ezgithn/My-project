@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //tsfdhhhfds
     public ParticleSystem Dust;
     private Rigidbody2D rb;
     private Animator animator;
 
     //Jump
-    public float jumpForce = 10f;
+    public float jumpForce;
     public float jumpTime;
     public float fallMultiplier;
     public float jumpMultiplier;
     private float extraJump;
     public float extraJumpValue;
+    public float jumpHeight;
 
     //Attack
     public GameObject attackCollider;
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
 
     public float speed;
-    private float idle;
+    private readonly float idle;
     public float moveSpeed;
     public float walkSpeed;
     public float runSpeed;
@@ -54,10 +56,13 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     private Vector2 vgravity;
 
-    //Woww
+    public TrailRenderer tRenderer;
+   
 
 
-    // jrhgskgthj
+
+    #region Unity Methods
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -170,6 +175,7 @@ public class PlayerController : MonoBehaviour
             isDashing = true;
             dashTimeLeft = dashDuration;
             dashCooldownLeft = dashCooldown;
+            tRenderer.emitting = true;
         }
 
         if (isDashing)
@@ -180,6 +186,7 @@ public class PlayerController : MonoBehaviour
             {
                 isDashing = false;
                 rb.velocity = Vector2.zero;
+                tRenderer.emitting = false;
             }
         }
 
@@ -202,6 +209,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<Animator>().SetFloat("Speed", moveInput.magnitude);
         
     }
+    #endregion
 
     void Attack()
     {
@@ -248,11 +256,5 @@ public class PlayerController : MonoBehaviour
     {
        
     }
-
-    private void FixedUpdate()
-    {
-
-    }
-
   
 }
