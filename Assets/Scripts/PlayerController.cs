@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //tsfdhhhfds
+    //private PlayerController Instance;
     public ParticleSystem Dust;
     private Rigidbody2D rb;
     private Animator animator;
@@ -152,6 +152,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && animator.GetBool("Jump") && extraJump == extraJumpValue)
         {
             animator.SetBool("Jump", false);
+            
         }
         else if (extraJump == 0 && isGrounded == true)
         {
@@ -204,7 +205,6 @@ public class PlayerController : MonoBehaviour
             Invoke(nameof(DeactivateAttackCollider), Time.deltaTime * 200);
         }
 
-        
 
         GetComponent<Animator>().SetFloat("Speed", moveInput.magnitude);
         
@@ -238,7 +238,6 @@ public class PlayerController : MonoBehaviour
     }
 
   
-
     private void Flip()
     {
         Vector3 currentScale = gameObject.transform.localScale;
