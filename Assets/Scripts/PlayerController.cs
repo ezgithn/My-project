@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //private PlayerController Instance;
     public ParticleSystem Dust;
     private Rigidbody2D rb;
     private Animator animator;
@@ -58,7 +57,6 @@ public class PlayerController : MonoBehaviour
 
     public TrailRenderer tRenderer;
    
-
 
 
     #region Unity Methods
@@ -131,7 +129,6 @@ public class PlayerController : MonoBehaviour
             transform.position += moveSpeed * Time.deltaTime * moveDirection;
 
         }
-       
 
         if (horizontalMove > 0 && facingRight)
         {
@@ -156,8 +153,6 @@ public class PlayerController : MonoBehaviour
         }
         else if (extraJump == 0 && isGrounded == true)
         {
-            //rb.velocity = Vector2.up * jumpForce * jumpMultiplier;
-            //animator.SetBool("Jump", false);
             extraJump = extraJumpValue;
         }
         if (rb.velocity.y < 0)

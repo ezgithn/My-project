@@ -16,12 +16,7 @@ public class CameraControl : MonoBehaviour
     {
         
     }
-
-    void Update()
-    {
-        
-    }
-
+    
     private void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;

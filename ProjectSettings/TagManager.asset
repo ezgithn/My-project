@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Slime
   - Enemy
+  - IsometricDiamond
   layers:
   - Default
   - TransparentFX
